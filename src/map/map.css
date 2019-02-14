@@ -13,3 +13,6 @@ a {
     text-transform: capitalize;
 }
 
+span {
+    display: block;
+}

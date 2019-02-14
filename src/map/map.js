@@ -1,5 +1,9 @@
+import statusBar from '../status-bar/status-bar.js';
+
 import quests from '../quests.js';
 const questList = document.getElementById('quest-list');
+
+statusBar();
 
 for(let i = 0; i < quests.length; i++) {
     const questAnchor = document.createElement('a');
@@ -7,3 +11,4 @@ for(let i = 0; i < quests.length; i++) {
     questAnchor.textContent = quests[i].title;
     questList.appendChild(questAnchor);
 }
+
