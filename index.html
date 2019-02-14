@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Quest</title>
+</head>
+<body>
+    <header>
+        <h1>Adventure Quest</h1>
+    </header>
+    <main>
+        <form id="sign-in">
+            <label>
+                Your Name:
+                <input type="text" name="user-name" required>
+                <br>
+            </label>
+            Chose a Race:
+            <br>
+            <label>
+                <input type="radio" name="race" value="orc" required>
+                Orc
+            </label>
+            <label>
+                <input type="radio" name="race" value="human">
+                Human
+            </label>
+            <button>Click to proceed</button>
+        </form>
+    </main>
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
