@@ -25,7 +25,7 @@ for(let i = 0; i < quests.length; i++) {
 }
 
 const audio = new Audio(currentQuest.audioSrc);
-audio.play();
+// audio.play();
 questTitle.textContent = currentQuest.title;
 const questImage = document.createElement('img');
 questImage.src = currentQuest.imgSrc;
@@ -69,8 +69,14 @@ questChoices.addEventListener('submit', function(event) {
     userProfile.hitpoints += choice.hpChange;
     userProfile.gold += choice.goldChange;
     
-    const json = JSON.stringify(userProfile);
+    let json = JSON.stringify(userProfile);
     window.localStorage.setItem('userProfile', json);
+
+    json = window.localStorage.getItem('completedQuests');
+    const completedQuests = JSON.parse(json);
+    completedQuests.push(currentQuest.id);
+    json = JSON.stringify(completedQuests);
+    window.localStorage.setItem('completedQuests', json);
     
     statusBar();
 });
