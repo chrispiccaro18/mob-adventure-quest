@@ -7,20 +7,20 @@ const fire = {
     choices: [
         {
             description: 'run in and try to save village',
-            hpChange: -20,
+            hpChange: -25,
             goldChange: 50,
             result: 'The villagers love you and shower you with gold.'
         },
         {
             description: 'dump more gasoline on the village',
-            hpChange: -30,
+            hpChange: -25,
             goldChange: -5,
             result: 'The village is no more and you have to buy new shoes.'
         },
         {
             description: 'watch it burn',
-            hpChange: 0,
-            goldChange: 15,
+            hpChange: 10,
+            goldChange: 25,
             result: 'The flames are pretty. You salvaged some goodies'
         }
     ]

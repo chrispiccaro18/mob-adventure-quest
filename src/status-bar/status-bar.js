@@ -1,6 +1,10 @@
 function statusBar() {
-    console.log('testing');
     const userStatus = document.getElementById('user-status');
+    
+    while(userStatus.firstChild) {
+        console.log(userStatus.firstChild);
+        userStatus.removeChild(userStatus.firstChild);
+    }
 
     const jsonProfile = window.localStorage.getItem('userProfile');
     const userProfile = JSON.parse(jsonProfile);

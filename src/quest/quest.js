@@ -1,4 +1,5 @@
 import quests from '../quests.js';
+import statusBar from '../status-bar/status-bar.js';
 
 const userProfileString = window.localStorage.getItem('userProfile');
 const userProfile = JSON.parse(userProfileString);
@@ -11,6 +12,8 @@ const hiddenSection = document.getElementById('hidden-section');
 
 const searchParams = new URLSearchParams(window.location.search);
 const questToFind = searchParams.get('questid');
+
+statusBar();
 
 let currentQuest = null;
 for(let i = 0; i < quests.length; i++) {
@@ -51,21 +54,23 @@ questChoices.addEventListener('submit', function(event) {
     const value = formData.get('radio-choices');
     
     questChoices.classList.add('hidden');
-
+    
     const resultsP = document.createElement('p');
     const mapAnchor = document.createElement('a');
     mapAnchor.href = 'map.html';
     mapAnchor.textContent = 'Back to HQ';
-
+    
     const choice = currentQuest.choices[parseInt(value)];
     
     resultsP.textContent = choice.result;
     hiddenSection.appendChild(resultsP);
     hiddenSection.appendChild(mapAnchor);
-
+    
     userProfile.hitpoints += choice.hpChange;
     userProfile.gold += choice.goldChange;
-
+    
     const json = JSON.stringify(userProfile);
     window.localStorage.setItem('userProfile', json);
+    
+    statusBar();
 });
