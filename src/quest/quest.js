@@ -6,6 +6,7 @@ const userProfile = JSON.parse(userProfileString);
 const questTitle = document.getElementById('quest-title');
 const questDescription = document.getElementById('quest-description');
 const questChoices = document.getElementById('quest-choices');
+const imageContainer = document.getElementById('image-container');
 const hiddenSection = document.getElementById('hidden-section');
 
 const searchParams = new URLSearchParams(window.location.search);
@@ -20,7 +21,13 @@ for(let i = 0; i < quests.length; i++) {
     }
 }
 
+const audio = new Audio(currentQuest.audioSrc);
+audio.play();
 questTitle.textContent = currentQuest.title;
+const questImage = document.createElement('img');
+questImage.src = currentQuest.imgSrc;
+questImage.alt = currentQuest.title;
+imageContainer.appendChild(questImage);
 questDescription.textContent = currentQuest.questDescription;
 
 

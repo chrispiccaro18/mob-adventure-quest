@@ -1,6 +1,8 @@
 const fire = {
     id: 'fire',
     title: 'burning village',
+    imgSrc: './assets/villagefire.jpg',
+    audioSrc: '../../assets/fire.mp3',
     questDescription: 'You see a burning village. What do you do?',
     choices: [
         {
