@@ -34,5 +34,4 @@ function statusBar() {
     statusBarGold.textContent = 'Gold: ' + userProfile.gold;
 }
 
-
 export default statusBar;

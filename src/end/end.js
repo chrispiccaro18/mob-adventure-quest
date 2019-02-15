@@ -6,8 +6,9 @@ const imageContainer = document.getElementById('image-container');
 let json = window.localStorage.getItem('userProfile');
 const userProfile = JSON.parse(json);
 
-json = window.localStorage.getItem('completedQuests');
-const completedQuests = JSON.parse(json);
+let completedQuests = [];
+const completedQuestsString = JSON.stringify(completedQuests);
+window.localStorage.setItem('completedQuests', completedQuestsString);
 
 const image = document.createElement('img');    
 if(userProfile.hitpoints <= 0) {

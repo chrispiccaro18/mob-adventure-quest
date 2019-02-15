@@ -45,7 +45,7 @@ for(let i = 0; i < currentQuest.choices.length; i++) {
     choiceLabel.textContent = currentQuest.choices[i].description;
     
     choiceLabel.prepend(choiceRadio);
-    questChoices.prepend(choiceLabel);
+    questChoices.appendChild(choiceLabel);
 }
 
 questChoices.addEventListener('submit', function(event) {
@@ -79,11 +79,13 @@ questChoices.addEventListener('submit', function(event) {
     window.localStorage.setItem('completedQuests', json);
     
     if(userProfile.hitpoints <= 0) {
-        window.location = 'end.html';
+        mapAnchor.href = 'end.html';
+        mapAnchor.textContent = 'See the Ending';
     }
 
     if(completedQuests.length === quests.length) {
-        window.location = 'end.html';
+        mapAnchor.href = 'end.html';
+        mapAnchor.textContent = 'See the Ending';
     }
 
     statusBar();
