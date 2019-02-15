@@ -1,8 +1,8 @@
 import quests from '../quests.js';
 import statusBar from '../status-bar/status-bar.js';
+import loadLocalStorage from '../utilities/load.js';
 
-const userProfileString = window.localStorage.getItem('userProfile');
-const userProfile = JSON.parse(userProfileString);
+const userProfile = loadLocalStorage('userProfile');
 
 const questTitle = document.getElementById('quest-title');
 const questDescription = document.getElementById('quest-description');
@@ -72,8 +72,7 @@ questChoices.addEventListener('submit', function(event) {
     let json = JSON.stringify(userProfile);
     window.localStorage.setItem('userProfile', json);
 
-    json = window.localStorage.getItem('completedQuests');
-    const completedQuests = JSON.parse(json);
+    const completedQuests = loadLocalStorage('completedQuests');
     completedQuests.push(currentQuest.id);
     json = JSON.stringify(completedQuests);
     window.localStorage.setItem('completedQuests', json);

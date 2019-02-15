@@ -1,10 +1,10 @@
 import statusBar from '../status-bar/status-bar.js';
+import loadLocalStorage from '../utilities/load.js';
 
 const endMessage = document.getElementById('end-message');
 const imageContainer = document.getElementById('image-container');
 
-let json = window.localStorage.getItem('userProfile');
-const userProfile = JSON.parse(json);
+const userProfile = loadLocalStorage('userProfile');
 
 let completedQuests = [];
 const completedQuestsString = JSON.stringify(completedQuests);

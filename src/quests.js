@@ -1,3 +1,5 @@
+import unicornRide from './story-variations/unicorn-ride.js';
+
 const fire = {
     id: 'fire',
     title: 'burning village',
@@ -72,7 +74,7 @@ const unicorn = {
             description: 'Wrangle and ride!',
             hpChange: -200,
             goldChange: 0,
-            result: 'A unicorn cannot be tamed, Dufus. It tramples you, then skewers you with its horn. You die!'
+            result: unicornRide()
         },
         {
             description: 'Run away!',

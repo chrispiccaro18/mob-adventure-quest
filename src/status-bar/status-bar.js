@@ -1,3 +1,5 @@
+import loadLocalStorage from '../utilities/load.js';
+
 function statusBar() {
     const userStatus = document.getElementById('user-status');
     
@@ -6,18 +8,35 @@ function statusBar() {
         userStatus.removeChild(userStatus.firstChild);
     }
 
-    const jsonProfile = window.localStorage.getItem('userProfile');
-    const userProfile = JSON.parse(jsonProfile);
+    // const jsonProfile = window.localStorage.getItem('userProfile');
+    // const userProfile = JSON.parse(jsonProfile);
+
+    const userProfile = loadLocalStorage('userProfile');
+
 
     const statusBarName = document.createElement('span');
     const avatarSpan = document.createElement('span');
     const avatar = document.createElement('img');
 
-    if(userProfile.race === 'orc') {
-        avatar.src = './assets/orc.png';
-    } else {
-        avatar.src = './assets/human.png';
+
+    switch(userProfile.race) {
+        case 'orc':
+            avatar.src = './assets/orc.png';
+            break;
+        case 'human':
+            avatar.src = './assets/human.png';
+            break;
+        case 'dwarf':
+            avatar.src = './assets/dwarf.png';
+            break;
+        case 'elf':
+            avatar.src = './assets/elf.png';
+            break;
+        case 'kobold':
+            avatar.src = './assets/kobold.png';
+            break;
     }
+
     
     statusBarName.textContent = userProfile.username;
     avatarSpan.appendChild(avatar);
