@@ -10,8 +10,20 @@ function statusBar() {
     const userProfile = JSON.parse(jsonProfile);
 
     const statusBarName = document.createElement('span');
+    const avatarSpan = document.createElement('span');
+    const avatar = document.createElement('img');
+
+    if(userProfile.race === 'orc') {
+        avatar.src = './assets/orc.png';
+    } else {
+        avatar.src = './assets/human.png';
+    }
+    
+    statusBarName.textContent = userProfile.username;
+    avatarSpan.appendChild(avatar);
+    userStatus.appendChild(avatarSpan);
     userStatus.appendChild(statusBarName);
-    statusBarName.textContent = 'Name: ' + userProfile.username;
+    avatar.classList.add('icons');
     
     const statusBarHP = document.createElement('span');
     userStatus.appendChild(statusBarHP);
