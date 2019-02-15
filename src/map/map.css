@@ -1,15 +1,8 @@
-html {
-    margin: 0px;
-    height: 100%;
-    background-image: linear-gradient(to bottom right, red, yellow); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 a {
     margin: 5px;
     display: block;
     text-transform: capitalize;
 }
+
 

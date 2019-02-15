@@ -8,8 +8,8 @@ signIn.addEventListener('submit', function(event) {
     const userProfile = {
         username: formData.get('user-name'),
         race: formData.get('race'),
-        hitpoints: 50,
-        gold: 0
+        hitpoints: 100,
+        gold: 25
     };
 
     const json = JSON.stringify(userProfile);
