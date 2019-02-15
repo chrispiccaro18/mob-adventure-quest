@@ -2,7 +2,7 @@ const fire = {
     id: 'fire',
     title: 'burning village',
     imgSrc: './assets/villagefire.jpg',
-    audioSrc: '../../assets/fire.mp3',
+    audioSrc: '../../assets/fire-sound.mp3',
     questDescription: 'You see a burning village. What do you do?',
     choices: [
         {
@@ -30,8 +30,8 @@ const fire = {
 const dragon = {
     id: 'dragon',
     title: 'dragon keep',
-    imgSrc: './assets/villagefire.jpg',
-    audioSrc: '../../assets/fire.mp3',
+    imgSrc: './assets/dragon.jpg',
+    audioSrc: '../../assets/dragon-sound.mp3',
     questDescription: 'A dragon is attacking the village of Ith. You successfully infiltrate her lair and see a mountain of gold, jewels and treasure. What do you do?',
     choices: [
         {
@@ -58,9 +58,10 @@ const dragon = {
 const unicorn = {
     id: 'unicorn',
     title: 'majestic unicorn',
-    imgSrc: './assets/villagefire.jpg',
-    audioSrc: '../../assets/fire.mp3',
-    questDescription: 'You are on a lovely stroll and encounter a majestic unicorn. What do you do?' [
+    imgSrc: './assets/unicorn.png',
+    audioSrc: '../../assets/unicorn-sound.mp3',
+    questDescription: 'You are on a lovely stroll and encounter a majestic unicorn. What do you do?', 
+    choices: [
         {
             description: 'Approach and pet.',
             hpChange: 100,
